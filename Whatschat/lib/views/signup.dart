@@ -1,4 +1,5 @@
 import 'package:chat_app/services/auth.dart';
+import 'package:chat_app/services/helperfunction.dart';
 import 'package:chat_app/widgets/widget.dart';
 import 'package:flutter/material.dart';
 
@@ -21,6 +22,7 @@ class _SignUpState extends State<SignUp> {
   TextEditingController passwordTextEditingController = TextEditingController();
   final AuthService _auth = AuthService();
   String error = '';
+  HelperFunction helperFunction = HelperFunction();
 
   @override
   Widget build(BuildContext context) {
