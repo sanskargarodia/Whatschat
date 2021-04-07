@@ -108,7 +108,6 @@ class _SignUpState extends State<SignUp> {
                               ),
                               SizedBox(height: 10),
                               Container(
-                                  color: Colors.blue,
                                   width: size.width,
                                   child: Text(error,
                                       style: TextStyle(color: Colors.red)))

@@ -98,16 +98,18 @@ class _SignInState extends State<SignIn> {
                           ),
                         ),
                         SizedBox(height: size.height / 18),
-                        Container(
-                          height: size.height / 12,
-                          alignment: Alignment.center,
-                          width: size.width,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(30),
-                              color: Colors.black),
-                          child: Text("Sign In with Google",
-                              style:
-                                  TextStyle(color: Colors.white, fontSize: 20)),
+                        GestureDetector(
+                          child: Container(
+                            height: size.height / 12,
+                            alignment: Alignment.center,
+                            width: size.width,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(30),
+                                color: Colors.black),
+                            child: Text("Sign In with Google",
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 20)),
+                          ),
                         ),
                         Container(
                             margin: EdgeInsets.symmetric(vertical: 10),

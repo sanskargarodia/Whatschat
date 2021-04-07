@@ -1,5 +1,5 @@
 class User {
   String uid;
-  String username;
-  User({this.uid,this.username});
+  static String username;
+  User({this.uid});
 }

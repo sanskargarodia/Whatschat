@@ -18,14 +18,15 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return StreamProvider<User>.value(
       value: AuthService().user,
-          child: MaterialApp(
+      child: MaterialApp(
         routes: {
           '/signin': (context) => SignIn(),
           '/signup': (context) => SignUp(),
-          '/chatroom': (context) => ChatRoom(),'/search':(context)=>Search()
+          '/chatroom': (context) => ChatRoom(),
+          '/search': (context) => Search()
         },
         debugShowCheckedModeBanner: false,
-        home:Wrapper(),
+        home: Wrapper(),
       ),
     );
   }

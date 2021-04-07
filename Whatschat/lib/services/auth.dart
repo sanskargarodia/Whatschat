@@ -3,12 +3,17 @@ import 'package:chat_app/services/helperfunction.dart';
 import 'package:chat_app/user.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:google_sign_in/google_sign_in.dart';
+
+import 'package:flutter/foundation.dart' show kIsWeb;
 
 class AuthService {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final DatabaseMethods databaseMethods = DatabaseMethods();
   HelperFunction helperFunction = new HelperFunction();
   QuerySnapshot snapshotUserInfo;
+  AuthResult _authResult;
+  final GoogleSignIn _googleSignIn = GoogleSignIn();
 
   User _userFromFirebaseUser(FirebaseUser user) {
     return user != null ? User(uid: user.uid) : null;
@@ -26,8 +31,8 @@ class AuthService {
       HelperFunction.saveUserLoggedInSharedPreference(true);
       databaseMethods.getUserByUserEmail(email).then((val) {
         snapshotUserInfo = val;
-        HelperFunction.saveUserNameSharedPreference(
-            snapshotUserInfo.documents[0].data['name']);
+        HelperFunction.saveUserEmailSharedPreference(
+            snapshotUserInfo.documents[0].data['email']);
       });
       return _userFromFirebaseUser(user);
     } catch (e) {
